@@ -12,6 +12,24 @@ body{
       );
     
   } 
+img{
+    width:100%;
+    height: auto;
+    display: block;
+}
+.avatar-img {
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    border-radius: 50%;
+   }
+.icon {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: white;
+   }
 /* LAYOUT */
 main{
     width: 100%;
@@ -24,19 +42,31 @@ main{
 }
 .user{
     min-height: 10%;
-    background-color: aqua;
+    background-color: #eaeaea;
 }
 .notification{
     min-height: 10%;
-    background-color: green;
+    background-color: #8edafc;
+}
+#icon{
+    position: relative;
+    top: 8px;
+    left: 8px;
+}
+.underline{
+    text-decoration: underline;
 }
 .serch{
     min-height: 5%;
-    background-color: pink;
+    background-color: #fafafa;
 }
 .contacts{
     min-height: 75%;
-    background-color: orange;
+    background-color: white;
+    overflow-y: scroll;
+}
+.contacts-border{
+    border-bottom:1px solid #fafafa;
 }
 
 /* right part main layout */
