@@ -33,6 +33,10 @@ p{
     border-radius: 50%;
     background-color: white;
    }
+
+
+
+   
 /* LAYOUT */
 main{
     width: 100%;
@@ -44,10 +48,12 @@ main{
     width: 30%;
     border-right: 1px solid blue;
 }
+/* user profile */
 .user{
     min-height: 10%;
     background-color: #eaeaea;
 }
+/* notificaion area */ 
 .notification{
     min-height: 10%;
     background-color: #8edafc;
@@ -64,10 +70,12 @@ main{
     text-decoration: underline;
     color: gray;
 }
+/* serch contact */
 .serch{
     min-height: 5%;
     background-color: #fafafa;
 }
+/* contacts list */ 
 .contacts{
     min-height: 75%;
     background-color: white;
@@ -81,16 +89,33 @@ main{
 .right{
     width:70%;
 }
-
+/* message destination */
 .message-contact{
     min-height: 10%;
     background-color: #eaeaea;
 }
+/* message content */
 .message{
     min-height: 80%;
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
 }
+.received{
+    background-color: white;
+    border-radius: 12px;
+    padding: 5px 15px;
+    margin: 10px 40px;
+    max-width: 300px;
+}
+
+.sent{
+    background-color: #d5f9ba;
+    border-radius: 12px;
+    padding: 5px 15px;
+    margin: 10px 40px;
+    max-width: 300px;
+}
+/* writing new message */
 .typing{
     min-height: 10%;
     background-color: #f3eeea;
