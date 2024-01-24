@@ -36,7 +36,7 @@ p{
 
 
 
-   
+
 /* LAYOUT */
 main{
     width: 100%;
@@ -97,6 +97,7 @@ main{
 /* message content */
 .message{
     min-height: 80%;
+    max-height: 80%;
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
 }
