@@ -13,5 +13,12 @@ body{
       rgb(0, 150, 136) 80%,
       rgb(0, 150, 136) 100%
     );
+    overflow: hidden;
   } 
 
+main{
+    width: 90%;
+    height: 90vh;
+    background-color: aliceblue;
+    margin:5vh auto;
+  }
