@@ -71,13 +71,9 @@
                       </div>
                 </div>
                 <div class="contacts">
-                    <div class="contacts-border d-flex">
-                        <img class="avatar-img" src="img/avatar_1.jpg" alt="Michele">
-                        <p><strong>Michele</strong></p>
-                    </div>
-                    <div class="contacts-border d-flex">
-                        <img class="avatar-img" src="img/avatar_2.jpg" alt="Fabio">
-                        <p><strong>Fabio</strong></p>
+                    <div v-for="contact in data.contacts" class="contacts-border d-flex">
+                        <img class="avatar-img" :src="`img/avatar${contact.avatar}.jpg`" alt="{{contact.name}}">
+                        <p><strong>{{contact.name}}</strong></p>
                     </div>
                 </div>
 
