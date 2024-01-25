@@ -11,7 +11,8 @@ const app = createApp({
         user,
         contacts,
         activeId: 1,
-        newMessagetxt: ''
+        newMessagetxt: '',
+        timeout: ''
     }),
     computed:{
         currentContact(){
@@ -33,10 +34,23 @@ const app = createApp({
 
 
             this.newMessagetxt = "";
+        },
+        messageReceived(currentContact){
+            const newMessageReceived = {
+                id: new Date().toISOString(),
+                date: new Date().toDateString(),
+                text: 'ok',
+                status:'received'
+            }
+            currentContact.messages.push(newMessageReceived);
+            setTimeout(this.messageReceived, 1000);
+
         }
+    },
+    mounted(){
+        this.timeout = setTimeout(this.messageReceived, 1000);
     }
     
 })
 
-console.log(data);
 app.mount('#root')
