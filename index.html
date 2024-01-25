@@ -71,7 +71,7 @@
                       </div>
                 </div>
                 <div class="contacts">
-                    <div v-for="contact in contacts" :key="contact.id" class="contacts-border d-flex" @click="currentContact">
+                    <div v-for="contact in contacts" :key="contact.id" class="contacts-border d-flex" @click="activeId = contact.id">
                         <img class="avatar-img" :src="getAvatarUrl(contact)" alt="{{contact.name}}">
                         <p><strong>{{contact.name}}</strong></p>
                     </div>
@@ -83,9 +83,9 @@
                 <div class="message-contact">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
-                            <img class="avatar-img" src="img/avatar_1.jpg" alt="Michele">
+                            <img class="avatar-img" :src="getAvatarUrl(currentContact)" :alt="currentContact.name">
                             <div>
-                                <p><strong>Michele</strong></p>
+                                <p><strong>{{currentContact.name}}</strong></p>
                                 <p>Ultimo acesso oggi alle</p>
                             </div>
                         </div>

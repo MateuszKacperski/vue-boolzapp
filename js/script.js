@@ -14,11 +14,7 @@ const app = createApp({
     }),
     computed:{
         currentContact(){
-            if(this.contacts.id !== this.activeId){
-                return this.activeId = this.contacts.id
-            }else{
-                return this.activeId
-            } 
+           return this.contacts.find(({id}) => id === this.activeId)
         }
     },
     methods:{
