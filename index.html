@@ -96,17 +96,13 @@
                     </div>
                 </div>
                 </div>
-                <div class="message">
-                    <div class="d-flex justify-content-start">
-                        <div class="received">
-                            <p>ciao Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae facilis consectetur, reiciendis vero obcaecati animi non, quam enim inventore necessitatibus quibusdam repudiandae expedita ea quaerat perferendis, hic exercitationem totam eaque?</p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <div class="sent">
-                            <p>ciao Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas iusto hic minus quo aspernatur corporis dolor ducimus dignissimos amet inventore. Voluptatem, odio officiis! Saepe unde voluptas rem ad! Repudiandae, maxime.</p>
-                        </div>
-                    </div>
+                <div class="message p-4">
+                    <ul class="d-flex flex-column p-4 row-gap-3">
+                        <li v-for="message in currentContact.messages" :class="{sent: message.status === 'sent', received: message.status === 'received'}">
+                            <p class="mb-0">{{message.text}}</p>
+                            <span class="d-block text-end date-message">{{message.date}}</span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="typing d-flex justify-content-around align-items-center">
                     <div>

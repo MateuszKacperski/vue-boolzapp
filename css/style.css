@@ -34,7 +34,9 @@ p{
     background-color: white;
    }
 
-
+ul{
+    list-style-type: none;
+}
 
 
 /* LAYOUT */
@@ -97,26 +99,28 @@ main{
     background-color: #eaeaea;
 }
 /* message content */
+
 .message{
     min-height: 80%;
     max-height: 80%;
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
 }
-.received{
-    background-color: white;
-    border-radius: 12px;
-    padding: 5px 15px;
-    margin: 10px 40px;
-    max-width: 300px;
-}
-
 .sent{
+    padding: 10px 20px;
     background-color: #d5f9ba;
-    border-radius: 12px;
-    padding: 5px 15px;
-    margin: 10px 40px;
-    max-width: 300px;
+    align-self: flex-end;
+    border-radius: 15px;
+}
+.received{
+    padding: 10px 20px;
+    background-color: white;
+    align-self: flex-start;
+    border-radius: 15px;
+}
+.date-message{
+    
+    font-size: 12px;
 }
 /* writing new message */
 .typing{
