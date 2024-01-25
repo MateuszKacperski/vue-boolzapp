@@ -40,12 +40,12 @@
 
             <main class="d-flex">
                 <!-- left part of main -->
-              <div class="left">
+              <div class="left h-100">
                 <div class="user d-flex flex-column justify-content-center">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
-                            <img class="avatar-img" src="img/avatar_io.jpg" alt="profile pic">
-                            <p><strong>Nome Utente</strong></p>
+                            <img class="avatar-img" :src="getAvatarUrl(user)" :alt="user.name">
+                            <p><strong>{{user.name}}</strong></p>
                         </div>
                     <div class="d-flex align-items-center justify-content-end">
                         <i class="p-2 fa-solid fa-circle-notch fa-lg" style="color: #b1b1b1;"></i>
@@ -71,8 +71,8 @@
                       </div>
                 </div>
                 <div class="contacts">
-                    <div v-for="contact in data.contacts" class="contacts-border d-flex">
-                        <img class="avatar-img" :src="`img/avatar${contact.avatar}.jpg`" alt="{{contact.name}}">
+                    <div v-for="contact in contacts" :key="contact.id" class="contacts-border d-flex" @click="currentContact">
+                        <img class="avatar-img" :src="getAvatarUrl(contact)" alt="{{contact.name}}">
                         <p><strong>{{contact.name}}</strong></p>
                     </div>
                 </div>

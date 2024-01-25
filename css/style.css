@@ -78,11 +78,13 @@ main{
 /* contacts list */ 
 .contacts{
     min-height: 75%;
+    max-height: 75%;
     background-color: white;
     overflow-y: scroll;
 }
 .contacts-border{
     border-bottom:1px solid #fafafa;
+    cursor: pointer;
 }
 
 /* right part main layout */
