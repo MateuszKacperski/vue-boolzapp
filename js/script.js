@@ -11,6 +11,7 @@ const app = createApp({
         user,
         contacts,
         activeId: 1,
+        newMessagetxt: ''
     }),
     computed:{
         currentContact(){
@@ -20,6 +21,18 @@ const app = createApp({
     methods:{
         getAvatarUrl({avatar}){
             return `img/avatar${avatar}.jpg`
+        },
+        addNewMessage(currentContact){
+            const newMessage = {
+                id: new Date().toISOString(),
+                date: new Date().toDateString(),
+                text: this.newMessagetxt,
+                status:'sent'
+            }
+            currentContact.messages.push(newMessage);
+
+
+            this.newMessagetxt = "";
         }
     }
     

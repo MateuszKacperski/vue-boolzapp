@@ -110,7 +110,7 @@
                     </div>
                     <div>
                         <div class="input-group m-3">
-                            <input type="text" class="input" placeholder="Scrivi un messaggio">
+                            <input type="text" class="input" placeholder="Scrivi un messaggio" v-model.trim="newMessagetxt" @keyup.enter="addNewMessage(currentContact)">
                           </div>
                           
                     </div>
