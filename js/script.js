@@ -12,43 +12,43 @@ const app = createApp({
         contacts,
         activeId: 1,
         newMessagetxt: '',
-        timeout: ''
     }),
     computed:{
+        //Find a current contact
         currentContact(){
            return this.contacts.find(({id}) => id === this.activeId)
         }
     },
     methods:{
+        //Creating a string for uploading images
         getAvatarUrl({avatar}){
             return `img/avatar${avatar}.jpg`
         },
-        addNewMessage(currentContact){
+        //Creating a new message
+        addNewMessage(){
+            if(!this.newMessagetxt) return;
             const newMessage = {
                 id: new Date().toISOString(),
-                date: new Date().toDateString(),
+                date: new Date().toLocaleDateString(),
                 text: this.newMessagetxt,
                 status:'sent'
             }
-            currentContact.messages.push(newMessage);
-
-
+            this.currentContact.messages.push(newMessage);
             this.newMessagetxt = "";
-        },
-        messageReceived(currentContact){
-            const newMessageReceived = {
-                id: new Date().toISOString(),
-                date: new Date().toDateString(),
-                text: 'ok',
-                status:'received'
-            }
-            currentContact.messages.push(newMessageReceived);
-            setTimeout(this.messageReceived, 1000);
-
+            //Respond message after 1 second
+            setTimeout(() => {
+                const newMessageReceived = {
+                    id: new Date().toISOString(),
+                    date: new Date().toLocaleDateString(),
+                    text: 'ok',
+                    status:'received'
+                }
+                this.currentContact.messages.push(newMessageReceived);
+            }, 1000)
         }
-    },
-    mounted(){
-        this.timeout = setTimeout(this.messageReceived, 1000);
+       
+
+        
     }
     
 })

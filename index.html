@@ -41,6 +41,7 @@
             <main class="d-flex">
                 <!-- left part of main -->
               <div class="left h-100">
+                 <!-- Your profile  -->
                 <div class="user d-flex flex-column justify-content-center">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
@@ -54,6 +55,7 @@
                     </div>
                     </div>
                 </div>
+                 <!-- Notification allowed or not option -->
                 <div class="notification">
                   <div class="d-flex align-items-center pt-3 ps-2">
                     <div class="icon">
@@ -64,6 +66,7 @@
                     </p>
                   </div>
                 </div>
+                 <!-- contacts list -->
                 <div class="serch d-flex align-items-center">
                    <div class="input-group">
                         <span class="input-group-text"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #b1b1b1;"></i></span>
@@ -80,6 +83,7 @@
               </div>
               <!--right part of main -->
               <div class="right">
+                <!-- Active contact -->
                 <div class="message-contact">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center">
@@ -96,6 +100,7 @@
                     </div>
                 </div>
                 </div>
+                 <!-- Chat of active contact -->
                 <div class="message p-4">
                     <ul class="d-flex flex-column p-4 row-gap-3">
                         <li v-for="message in currentContact.messages" :class="{sent: message.status === 'sent', received: message.status === 'received'}">
@@ -104,13 +109,15 @@
                         </li>
                     </ul>
                 </div>
+                 <!-- section to write a new message -->
                 <div class="typing d-flex justify-content-around align-items-center">
                     <div>
                         <i class="fa-regular fa-face-smile fa-xl" style="color: #6b7376;"></i>
                     </div>
                     <div>
                         <div class="input-group m-3">
-                            <input type="text" class="input" placeholder="Scrivi un messaggio" v-model.trim="newMessagetxt" @keyup.enter="addNewMessage(currentContact); messageReceived(currentContact)">
+                            <input type="text" class="input" placeholder="Scrivi un messaggio" v-model.trim="newMessagetxt"
+                             @keyup.enter="addNewMessage">
                           </div>
                           
                     </div>
