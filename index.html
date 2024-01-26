@@ -66,15 +66,16 @@
                     </p>
                   </div>
                 </div>
-                 <!-- contacts list -->
+                 <!-- serch contact -->
                 <div class="serch d-flex align-items-center">
                    <div class="input-group">
                         <span class="input-group-text"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #b1b1b1;"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model.trim="serchContact">
                       </div>
                 </div>
+                <!-- contacts list -->
                 <div class="contacts">
-                    <div v-for="contact in contacts" :key="contact.id" class="contacts-border d-flex" @click="activeId = contact.id">
+                    <div v-for="contact in filteredContacts" :key="contact.id" class="contacts-border d-flex" @click="activeId = contact.id">
                         <img class="avatar-img" :src="getAvatarUrl(contact)" alt="{{contact.name}}">
                         <p><strong>{{contact.name}}</strong></p>
                     </div>

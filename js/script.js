@@ -12,11 +12,18 @@ const app = createApp({
         contacts,
         activeId: 1,
         newMessagetxt: '',
+        serchContact: ''
     }),
     computed:{
         //Find a current contact
         currentContact(){
            return this.contacts.find(({id}) => id === this.activeId)
+        },
+        // Creating a filtered contact
+        filteredContacts(){
+            const serchContent = this.serchContact.toLowerCase();
+            return this.contacts.filter(({name}) => 
+                name.toLowerCase().includes(serchContent));
         }
     },
     methods:{
