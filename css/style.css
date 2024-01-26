@@ -39,6 +39,7 @@ ul{
 }
 
 
+
 /* LAYOUT */
 main{
     width: 100%;
@@ -106,6 +107,7 @@ main{
     background-image: url("../img/mine.jpg");
     overflow-y: scroll;
 }
+
 .sent{
     padding: 10px 20px;
     background-color: #d5f9ba;

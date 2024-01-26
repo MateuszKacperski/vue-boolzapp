@@ -52,10 +52,10 @@ const app = createApp({
                 }
                 this.currentContact.messages.push(newMessageReceived);
             }, 1000)
-        }
-       
-
-        
+        },
+        removeTask(id) {
+            this.currentContact.messages = this.currentContact.messages.filter(message => id !== message.id);
+        }  
     }
     
 })
